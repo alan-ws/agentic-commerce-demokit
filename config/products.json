@@ -1,0 +1,477 @@
+[
+  {
+    "id": "jw-black",
+    "name": "Johnnie Walker Black Label",
+    "brand": "Johnnie Walker",
+    "category": "scotch",
+    "subcategory": "blended",
+    "description": "A masterful blend of whiskies from across Scotland, aged for at least 12 years. Rich and complex with layers of flavor.",
+    "tastingNotes": {
+      "nose": "Rich fruits with hints of vanilla and orange peel",
+      "palate": "Creamy toffee, fruit, and smoky malt",
+      "finish": "Long, lingering, and wonderfully smoky"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 28, "USD": 35, "EUR": 32 },
+    "image": "/products/jw-black.jpg",
+    "occasions": ["gifting", "casual-drink", "cocktails"],
+    "flavorProfile": ["smoky", "sweet", "smooth"]
+  },
+  {
+    "id": "jw-blue",
+    "name": "Johnnie Walker Blue Label",
+    "brand": "Johnnie Walker",
+    "category": "scotch",
+    "subcategory": "blended",
+    "description": "An exquisite blend made from some of Scotland's rarest and most exceptional whiskies. Only one in every ten thousand casks has the quality to deliver the signature taste.",
+    "tastingNotes": {
+      "nose": "Dried fruits, hazelnuts, and sherry sweetness",
+      "palate": "Honey, dark chocolate, and a whisper of smoke",
+      "finish": "Velvety smooth with a lingering warmth"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 175, "USD": 230, "EUR": 200 },
+    "image": "/products/jw-blue.jpg",
+    "occasions": ["gifting", "celebration"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  },
+  {
+    "id": "jw-gold",
+    "name": "Johnnie Walker Gold Label Reserve",
+    "brand": "Johnnie Walker",
+    "category": "scotch",
+    "subcategory": "blended",
+    "description": "A celebration blend created from whiskies chosen specifically for their sweet, honeyed qualities. Luxuriously smooth with a gentle warmth.",
+    "tastingNotes": {
+      "nose": "Creamy vanilla, fresh fruits, and subtle wood notes",
+      "palate": "Honey, creamy toffee, and gentle wood spice",
+      "finish": "Sweet and lingering with a whisper of smoke"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 45, "USD": 55, "EUR": 50 },
+    "image": "/products/jw-gold.jpg",
+    "occasions": ["gifting", "celebration", "dinner-pairing"],
+    "flavorProfile": ["sweet", "smooth", "fruity"]
+  },
+  {
+    "id": "talisker-10",
+    "name": "Talisker 10 Year Old",
+    "brand": "Talisker",
+    "category": "scotch",
+    "subcategory": "single-malt",
+    "description": "Made by the sea on the shores of the Isle of Skye. A powerful, peaty single malt with a maritime character that sets it apart.",
+    "tastingNotes": {
+      "nose": "Peat smoke, sea salt, and sweet malt",
+      "palate": "Full-bodied with peppery smoke, dried fruit, and malt sweetness",
+      "finish": "Long, warm, and peppery with a smoky tail"
+    },
+    "abv": 45.8,
+    "volume": "700ml",
+    "price": { "GBP": 38, "USD": 50, "EUR": 42 },
+    "image": "/products/talisker-10.jpg",
+    "occasions": ["casual-drink", "dinner-pairing"],
+    "flavorProfile": ["smoky", "spicy", "bold"]
+  },
+  {
+    "id": "lagavulin-16",
+    "name": "Lagavulin 16 Year Old",
+    "brand": "Lagavulin",
+    "category": "scotch",
+    "subcategory": "single-malt",
+    "description": "The definitive Islay single malt. Intensely flavored yet beautifully balanced, with dry peat smoke that gives way to sweet, rich fruit.",
+    "tastingNotes": {
+      "nose": "Rich peat smoke with iodine and seaweed",
+      "palate": "Full, rich dried fruit sweetness and bold peat smoke",
+      "finish": "Immensely long, elegant peat with sweet notes"
+    },
+    "abv": 43,
+    "volume": "700ml",
+    "price": { "GBP": 55, "USD": 75, "EUR": 62 },
+    "image": "/products/lagavulin-16.jpg",
+    "occasions": ["casual-drink", "dinner-pairing", "gifting"],
+    "flavorProfile": ["smoky", "bold", "sweet"]
+  },
+  {
+    "id": "oban-14",
+    "name": "Oban 14 Year Old",
+    "brand": "Oban",
+    "category": "scotch",
+    "subcategory": "single-malt",
+    "description": "From one of the smallest distilleries in Scotland, Oban offers a perfectly balanced single malt that bridges the Highland and Island styles.",
+    "tastingNotes": {
+      "nose": "Citrus and sea salt with a light smokiness",
+      "palate": "Rich, full and smooth with dried figs and honey",
+      "finish": "Long and exceptionally smooth with a dry, smoky sweetness"
+    },
+    "abv": 43,
+    "volume": "700ml",
+    "price": { "GBP": 45, "USD": 60, "EUR": 52 },
+    "image": "/products/oban-14.jpg",
+    "occasions": ["dinner-pairing", "gifting", "casual-drink"],
+    "flavorProfile": ["smooth", "sweet", "smoky"]
+  },
+  {
+    "id": "roe-co",
+    "name": "Roe & Co",
+    "brand": "Roe & Co",
+    "category": "irish-whiskey",
+    "subcategory": "blended",
+    "description": "A modern Dublin whiskey blended with care. Smooth, balanced, and perfect for mixing or sipping neat.",
+    "tastingNotes": {
+      "nose": "Vanilla, orchard fruits, and butterscotch",
+      "palate": "Spiced vanilla, creamy malt, and pear",
+      "finish": "Medium length with gentle spice"
+    },
+    "abv": 45,
+    "volume": "700ml",
+    "price": { "GBP": 30, "USD": 38, "EUR": 34 },
+    "image": "/products/roe-co.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  },
+  {
+    "id": "bulleit-bourbon",
+    "name": "Bulleit Bourbon",
+    "brand": "Bulleit",
+    "category": "irish-whiskey",
+    "subcategory": "bourbon",
+    "description": "Frontier whiskey with a bold, spicy character and a clean, smooth finish. Made with a uniquely high rye content for its distinctive flavor.",
+    "tastingNotes": {
+      "nose": "Oak, nutmeg, and light toffee",
+      "palate": "Maple, oak, and a spicy rye bite",
+      "finish": "Long, dry, and pleasantly spicy"
+    },
+    "abv": 45,
+    "volume": "700ml",
+    "price": { "GBP": 25, "USD": 30, "EUR": 28 },
+    "image": "/products/bulleit-bourbon.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["spicy", "bold", "sweet"]
+  },
+  {
+    "id": "ketel-one",
+    "name": "Ketel One Vodka",
+    "brand": "Ketel One",
+    "category": "vodka",
+    "subcategory": "classic",
+    "description": "Crafted in the Netherlands using traditional copper pot stills combined with modern distilling techniques. Exceptionally smooth with a crisp finish.",
+    "tastingNotes": {
+      "nose": "Fresh and clean with citrus notes",
+      "palate": "Crisp and silky with a hint of honey",
+      "finish": "Long, clean, and elegant"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 22, "USD": 28, "EUR": 25 },
+    "image": "/products/ketel-one.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["smooth", "sweet"]
+  },
+  {
+    "id": "smirnoff",
+    "name": "Smirnoff No. 21 Vodka",
+    "brand": "Smirnoff",
+    "category": "vodka",
+    "subcategory": "classic",
+    "description": "The world's number one vodka. Triple distilled and ten times filtered for a smooth, clean taste that works perfectly in any cocktail.",
+    "tastingNotes": {
+      "nose": "Clean with a light grain character",
+      "palate": "Smooth and mild with a hint of sweetness",
+      "finish": "Clean and fresh"
+    },
+    "abv": 37.5,
+    "volume": "700ml",
+    "price": { "GBP": 15, "USD": 18, "EUR": 16 },
+    "image": "/products/smirnoff.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["smooth"]
+  },
+  {
+    "id": "ciroc",
+    "name": "Ciroc Vodka",
+    "brand": "Ciroc",
+    "category": "vodka",
+    "subcategory": "premium",
+    "description": "A luxurious vodka distilled from fine French grapes. Five times distilled for a remarkably fresh and smooth taste.",
+    "tastingNotes": {
+      "nose": "Fresh citrus with subtle floral notes",
+      "palate": "Smooth and luscious with a hint of grape",
+      "finish": "Long, silky, and clean"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 32, "USD": 40, "EUR": 36 },
+    "image": "/products/ciroc.jpg",
+    "occasions": ["cocktails", "celebration"],
+    "flavorProfile": ["smooth", "fruity"]
+  },
+  {
+    "id": "tanqueray",
+    "name": "Tanqueray London Dry Gin",
+    "brand": "Tanqueray",
+    "category": "gin",
+    "subcategory": "london-dry",
+    "description": "A perfectly balanced gin using four botanicals. Crisp and refreshing with a distinctive juniper character that has made it a bartender's favorite since 1830.",
+    "tastingNotes": {
+      "nose": "Juniper, citrus, and subtle spice",
+      "palate": "Clean, crisp juniper with refreshing citrus",
+      "finish": "Dry, crisp, and beautifully balanced"
+    },
+    "abv": 43.1,
+    "volume": "700ml",
+    "price": { "GBP": 20, "USD": 25, "EUR": 22 },
+    "image": "/products/tanqueray.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["bold", "spicy"]
+  },
+  {
+    "id": "tanqueray-ten",
+    "name": "Tanqueray No. Ten",
+    "brand": "Tanqueray",
+    "category": "gin",
+    "subcategory": "premium",
+    "description": "A small-batch gin crafted with fresh whole citrus fruits in a unique Tiny Ten still. Beautifully crafted for the perfect martini.",
+    "tastingNotes": {
+      "nose": "Fresh grapefruit, orange, and lime",
+      "palate": "Citrus-forward with chamomile and white pepper",
+      "finish": "Crisp, clean, and refreshingly long"
+    },
+    "abv": 47.3,
+    "volume": "700ml",
+    "price": { "GBP": 28, "USD": 35, "EUR": 32 },
+    "image": "/products/tanqueray-ten.jpg",
+    "occasions": ["cocktails", "gifting"],
+    "flavorProfile": ["fruity", "bold"]
+  },
+  {
+    "id": "gordons",
+    "name": "Gordon's London Dry Gin",
+    "brand": "Gordon's",
+    "category": "gin",
+    "subcategory": "london-dry",
+    "description": "The world's best-selling London Dry Gin. A carefully crafted recipe of juniper berries and other botanicals, unchanged since 1769.",
+    "tastingNotes": {
+      "nose": "Fresh juniper with hints of coriander",
+      "palate": "Bold juniper with a touch of citrus",
+      "finish": "Crisp and refreshing"
+    },
+    "abv": 37.5,
+    "volume": "700ml",
+    "price": { "GBP": 14, "USD": 18, "EUR": 16 },
+    "image": "/products/gordons.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["bold"]
+  },
+  {
+    "id": "don-julio-blanco",
+    "name": "Don Julio Blanco",
+    "brand": "Don Julio",
+    "category": "tequila",
+    "subcategory": "blanco",
+    "description": "The purest expression of blue agave. Unaged and crystal clear with a fresh, agave-forward character that makes it perfect for cocktails.",
+    "tastingNotes": {
+      "nose": "Fresh agave, citrus, and light pepper",
+      "palate": "Clean agave with notes of citrus and black pepper",
+      "finish": "Crisp, clean, and pleasantly peppery"
+    },
+    "abv": 38,
+    "volume": "700ml",
+    "price": { "GBP": 38, "USD": 48, "EUR": 42 },
+    "image": "/products/don-julio-blanco.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["spicy", "bold"]
+  },
+  {
+    "id": "don-julio-reposado",
+    "name": "Don Julio Reposado",
+    "brand": "Don Julio",
+    "category": "tequila",
+    "subcategory": "reposado",
+    "description": "Aged for eight months in American white oak barrels, creating a mellow, elegant tequila with a rich and smooth flavor.",
+    "tastingNotes": {
+      "nose": "Dark chocolate, caramel, and ripe banana",
+      "palate": "Smooth agave with vanilla, cinnamon, and toasted oak",
+      "finish": "Clean, with a pleasant lingering agave sweetness"
+    },
+    "abv": 38,
+    "volume": "700ml",
+    "price": { "GBP": 42, "USD": 52, "EUR": 46 },
+    "image": "/products/don-julio-reposado.jpg",
+    "occasions": ["casual-drink", "dinner-pairing"],
+    "flavorProfile": ["smooth", "sweet", "spicy"]
+  },
+  {
+    "id": "don-julio-1942",
+    "name": "Don Julio 1942",
+    "brand": "Don Julio",
+    "category": "tequila",
+    "subcategory": "anejo",
+    "description": "A tribute to the year Don Julio began his tequila-making journey. Aged for a minimum of two and a half years for an exceptionally smooth, complex spirit.",
+    "tastingNotes": {
+      "nose": "Caramel, toffee, and warm oak with vanilla",
+      "palate": "Rich butterscotch, chocolate, and roasted agave",
+      "finish": "Long, warm, and luxuriously smooth"
+    },
+    "abv": 38,
+    "volume": "700ml",
+    "price": { "GBP": 130, "USD": 165, "EUR": 145 },
+    "image": "/products/don-julio-1942.jpg",
+    "occasions": ["celebration", "gifting"],
+    "flavorProfile": ["smooth", "sweet"]
+  },
+  {
+    "id": "casamigos-blanco",
+    "name": "Casamigos Blanco",
+    "brand": "Casamigos",
+    "category": "tequila",
+    "subcategory": "blanco",
+    "description": "A crisp, clean tequila with hints of citrus and a smooth, slightly sweet finish. Rested for two months for a silky character.",
+    "tastingNotes": {
+      "nose": "Citrus, vanilla, and sweet agave",
+      "palate": "Smooth agave with hints of mint and a slight sweetness",
+      "finish": "Silky smooth and lingering"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 42, "USD": 50, "EUR": 46 },
+    "image": "/products/casamigos-blanco.jpg",
+    "occasions": ["cocktails", "casual-drink", "celebration"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  },
+  {
+    "id": "captain-morgan",
+    "name": "Captain Morgan Original Spiced Gold",
+    "brand": "Captain Morgan",
+    "category": "rum",
+    "subcategory": "spiced",
+    "description": "A spirit drink based on Caribbean rum blended with a secret mix of spices. Smooth and medium-bodied, perfect for mixing.",
+    "tastingNotes": {
+      "nose": "Vanilla, brown sugar, and warm spices",
+      "palate": "Sweet vanilla with caramel and subtle spice",
+      "finish": "Smooth and mellow with a warm spice finish"
+    },
+    "abv": 35,
+    "volume": "700ml",
+    "price": { "GBP": 16, "USD": 20, "EUR": 18 },
+    "image": "/products/captain-morgan.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["sweet", "spicy", "smooth"]
+  },
+  {
+    "id": "zacapa-23",
+    "name": "Ron Zacapa Centenario 23",
+    "brand": "Zacapa",
+    "category": "rum",
+    "subcategory": "premium",
+    "description": "A Guatemalan rum aged between 6 and 23 years using the Sistema Solera process. Rich, complex, and remarkably smooth.",
+    "tastingNotes": {
+      "nose": "Rich butterscotch, oak, and dried fruits",
+      "palate": "Honeyed caramel, dark chocolate, and spiced oak",
+      "finish": "Long, warm, and exceptionally smooth"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 45, "USD": 55, "EUR": 50 },
+    "image": "/products/zacapa-23.jpg",
+    "occasions": ["gifting", "dinner-pairing", "casual-drink"],
+    "flavorProfile": ["sweet", "smooth", "bold"]
+  },
+  {
+    "id": "guinness-draught",
+    "name": "Guinness Draught",
+    "brand": "Guinness",
+    "category": "beer",
+    "subcategory": "stout",
+    "description": "The iconic Irish dry stout, famous for its velvety texture and creamy head. Brewed at St. James's Gate since 1759.",
+    "tastingNotes": {
+      "nose": "Roasted barley and coffee with a touch of caramel",
+      "palate": "Smooth and creamy with roasted malt and subtle bitterness",
+      "finish": "Clean, smooth, and refreshingly dry"
+    },
+    "abv": 4.2,
+    "volume": "440ml",
+    "price": { "GBP": 6, "USD": 8, "EUR": 7 },
+    "image": "/products/guinness-draught.jpg",
+    "occasions": ["casual-drink", "dinner-pairing"],
+    "flavorProfile": ["bold", "smooth"]
+  },
+  {
+    "id": "guinness-foreign-extra",
+    "name": "Guinness Foreign Extra Stout",
+    "brand": "Guinness",
+    "category": "beer",
+    "subcategory": "stout",
+    "description": "A bold, full-flavored stout with more hops and higher ABV than Guinness Draught. Originally brewed for export, now enjoyed worldwide.",
+    "tastingNotes": {
+      "nose": "Roasted grain, dried fruit, and a hint of tartness",
+      "palate": "Rich roasted barley with fruity notes and firm bitterness",
+      "finish": "Long, complex, and deeply satisfying"
+    },
+    "abv": 7.5,
+    "volume": "330ml",
+    "price": { "GBP": 4, "USD": 5, "EUR": 4 },
+    "image": "/products/guinness-foreign-extra.jpg",
+    "occasions": ["casual-drink", "dinner-pairing"],
+    "flavorProfile": ["bold", "fruity"]
+  },
+  {
+    "id": "singleton-12",
+    "name": "The Singleton of Dufftown 12",
+    "brand": "The Singleton",
+    "category": "scotch",
+    "subcategory": "single-malt",
+    "description": "An approachable and fruity Speyside single malt aged for 12 years. Smooth and sweet, perfect for those new to single malts.",
+    "tastingNotes": {
+      "nose": "Ripe pear, toffee, and nutmeg",
+      "palate": "Smooth butterscotch, nutty flavors, and ripe fruit",
+      "finish": "Medium length, sweet, and pleasantly malty"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 30, "USD": 38, "EUR": 34 },
+    "image": "/products/singleton-12.jpg",
+    "occasions": ["casual-drink", "gifting"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  },
+  {
+    "id": "buchanan-12",
+    "name": "Buchanan's DeLuxe 12",
+    "brand": "Buchanan's",
+    "category": "scotch",
+    "subcategory": "blended",
+    "description": "A smooth, well-balanced blended Scotch whisky aged for 12 years. Known for its sophisticated, fruity character.",
+    "tastingNotes": {
+      "nose": "Citrus, honey, and a touch of oak",
+      "palate": "Smooth and fruity with toffee and vanilla",
+      "finish": "Long, warm, and balanced"
+    },
+    "abv": 40,
+    "volume": "750ml",
+    "price": { "GBP": 28, "USD": 32, "EUR": 30 },
+    "image": "/products/buchanan-12.jpg",
+    "occasions": ["gifting", "casual-drink", "celebration"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  },
+  {
+    "id": "baileys",
+    "name": "Baileys Original Irish Cream",
+    "brand": "Baileys",
+    "category": "rum",
+    "subcategory": "liqueur",
+    "description": "The original Irish cream liqueur, blending Irish whiskey with cream, cocoa, and vanilla. Indulgently smooth and versatile.",
+    "tastingNotes": {
+      "nose": "Cream, chocolate, and vanilla",
+      "palate": "Rich cream, cocoa, and a hint of caramel",
+      "finish": "Smooth, sweet, and velvety"
+    },
+    "abv": 17,
+    "volume": "700ml",
+    "price": { "GBP": 14, "USD": 18, "EUR": 16 },
+    "image": "/products/baileys.jpg",
+    "occasions": ["casual-drink", "celebration", "cocktails"],
+    "flavorProfile": ["sweet", "smooth"]
+  }
+]

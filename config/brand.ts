@@ -1,0 +1,22 @@
+export const brand = {
+  name: "Diageo",
+  tagline: "Celebrating Life, Every Day, Everywhere",
+  logo: "/logo.svg",
+  theme: {
+    primary: "#1B365D",
+    secondary: "#C8A951",
+    background: "#FAFAFA",
+    foreground: "#1A1A1A",
+    muted: "#F5F5F5",
+  },
+  agent: {
+    name: "Diageo Discovery",
+    avatar: "/agent-avatar.svg",
+    toneOfVoice:
+      "Warm, knowledgeable, and sophisticated. Like a trusted bartender who knows their craft.",
+    greeting:
+      "Welcome to Diageo Discovery. I can help you find the perfect spirit for any occasion. What are you looking for today?",
+  },
+} as const;
+
+export type Brand = typeof brand;

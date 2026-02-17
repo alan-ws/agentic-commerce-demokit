@@ -1,0 +1,79 @@
+{
+  "defaultChannel": "retailer",
+  "rules": [
+    {
+      "match": { "market": "GB", "category": "scotch" },
+      "channels": [
+        { "type": "d2c", "name": "Malts.com", "url": "https://www.malts.com/{productSlug}", "priority": 1 },
+        { "type": "retailer", "name": "Amazon UK", "url": "https://www.amazon.co.uk/s?k={productName}", "priority": 2 },
+        { "type": "retailer", "name": "Tesco", "url": "https://www.tesco.com/groceries/en-GB/search?query={productName}", "priority": 3 },
+        { "type": "retailer", "name": "Waitrose", "url": "https://www.waitrose.com/ecom/shop/search?searchTerm={productName}", "priority": 4 }
+      ]
+    },
+    {
+      "match": { "market": "GB", "category": "gin" },
+      "channels": [
+        { "type": "retailer", "name": "Amazon UK", "url": "https://www.amazon.co.uk/s?k={productName}", "priority": 1 },
+        { "type": "retailer", "name": "Tesco", "url": "https://www.tesco.com/groceries/en-GB/search?query={productName}", "priority": 2 },
+        { "type": "retailer", "name": "Sainsbury's", "url": "https://www.sainsburys.co.uk/gol-ui/SearchResults/{productName}", "priority": 3 }
+      ]
+    },
+    {
+      "match": { "market": "GB", "category": "vodka" },
+      "channels": [
+        { "type": "retailer", "name": "Amazon UK", "url": "https://www.amazon.co.uk/s?k={productName}", "priority": 1 },
+        { "type": "retailer", "name": "Tesco", "url": "https://www.tesco.com/groceries/en-GB/search?query={productName}", "priority": 2 }
+      ]
+    },
+    {
+      "match": { "market": "GB" },
+      "channels": [
+        { "type": "retailer", "name": "Amazon UK", "url": "https://www.amazon.co.uk/s?k={productName}", "priority": 1 },
+        { "type": "retailer", "name": "Master of Malt", "url": "https://www.masterofmalt.com/search/?q={productName}", "priority": 2 }
+      ]
+    },
+    {
+      "match": { "market": "US", "category": "tequila" },
+      "channels": [
+        { "type": "retailer", "name": "Drizly", "url": "https://drizly.com/search?q={productName}", "priority": 1 },
+        { "type": "retailer", "name": "ReserveBar", "url": "https://www.reservebar.com/search?q={productName}", "priority": 2 },
+        { "type": "retailer", "name": "Total Wine", "url": "https://www.totalwine.com/search/all?text={productName}", "priority": 3 }
+      ]
+    },
+    {
+      "match": { "market": "US", "category": "scotch" },
+      "channels": [
+        { "type": "d2c", "name": "Malts.com", "url": "https://www.malts.com/{productSlug}", "priority": 1 },
+        { "type": "retailer", "name": "Drizly", "url": "https://drizly.com/search?q={productName}", "priority": 2 },
+        { "type": "retailer", "name": "ReserveBar", "url": "https://www.reservebar.com/search?q={productName}", "priority": 3 }
+      ]
+    },
+    {
+      "match": { "market": "US" },
+      "channels": [
+        { "type": "retailer", "name": "Drizly", "url": "https://drizly.com/search?q={productName}", "priority": 1 },
+        { "type": "retailer", "name": "Total Wine", "url": "https://www.totalwine.com/search/all?text={productName}", "priority": 2 }
+      ]
+    },
+    {
+      "match": { "market": "DE" },
+      "channels": [
+        { "type": "retailer", "name": "Amazon DE", "url": "https://www.amazon.de/s?k={productName}", "priority": 1 },
+        { "type": "retailer", "name": "Drink & Notes", "url": "https://www.drinksandnotes.de/search?q={productName}", "priority": 2 }
+      ]
+    },
+    {
+      "match": { "market": "FR" },
+      "channels": [
+        { "type": "retailer", "name": "Amazon FR", "url": "https://www.amazon.fr/s?k={productName}", "priority": 1 },
+        { "type": "retailer", "name": "Nicolas", "url": "https://www.nicolas.com/search?q={productName}", "priority": 2 }
+      ]
+    },
+    {
+      "match": { "market": "JP" },
+      "channels": [
+        { "type": "retailer", "name": "Amazon JP", "url": "https://www.amazon.co.jp/s?k={productName}", "priority": 1 }
+      ]
+    }
+  ]
+}

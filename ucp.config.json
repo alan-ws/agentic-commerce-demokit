@@ -1,0 +1,39 @@
+{
+  "ucp_version": "2026-01-11",
+  "roles": ["business"],
+  "runtime": "nodejs",
+  "capabilities": {
+    "core": ["dev.ucp.shopping.checkout"],
+    "extensions": ["dev.ucp.shopping.buyer_consent"]
+  },
+  "transports": ["rest", "mcp"],
+  "transport_priority": ["rest", "mcp"],
+  "payment_handlers": [],
+  "features": {
+    "ap2_mandates": false,
+    "identity_linking": false,
+    "multi_destination_fulfillment": false
+  },
+  "domain": "localhost:3000",
+  "existing_apis": {},
+  "policy_urls": {
+    "privacy": "https://www.diageo.com/privacy-policy",
+    "terms": "https://www.diageo.com/terms-of-use",
+    "refunds": "",
+    "shipping": ""
+  },
+  "scaffold_depth": "full",
+  "generated_files": [],
+  "answers": {
+    "project_type": "demokit",
+    "authentication_model": "none"
+  },
+  "deployment": {
+    "platform": "vercel",
+    "region": "iad1",
+    "mcp": {
+      "enabled": true,
+      "max_duration": 60
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "ageThresholds": {
+    "GB": 18,
+    "US": 21,
+    "DE": 18,
+    "FR": 18,
+    "IT": 18,
+    "ES": 18,
+    "JP": 20,
+    "IN": 25,
+    "AU": 18,
+    "NZ": 18,
+    "CA": 19,
+    "BR": 18,
+    "MX": 18,
+    "ZA": 18,
+    "KR": 19,
+    "CN": 18,
+    "default": 18
+  },
+  "restrictedMarkets": ["SA", "IR", "AF", "LY", "SD", "YE", "KW", "BN"],
+  "contentSuppressions": {
+    "FR": ["price-promotion"],
+    "US": ["health-claims"],
+    "IN": ["lifestyle-imagery", "celebrity-endorsement"],
+    "RU": ["lifestyle-imagery"],
+    "TH": ["time-restricted"]
+  }
+}
