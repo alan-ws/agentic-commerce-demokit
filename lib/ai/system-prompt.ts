@@ -2,7 +2,22 @@ import { brand } from "@/config/brand";
 import { conversationFlow } from "@/config/conversation";
 import { catalog } from "@/lib/render/catalog";
 
-export function buildSystemPrompt(market?: string): string {
+export interface ProductContext {
+  id: string;
+  name: string;
+  brand: string;
+  category: string;
+  description: string;
+  tastingNotes?: { nose: string; palate: string; finish: string } | null;
+  flavorProfile?: string[] | null;
+  abv: number;
+  volume: string;
+}
+
+export function buildSystemPrompt(
+  market?: string,
+  productContext?: ProductContext | null
+): string {
   const catalogPrompt = catalog.prompt({ mode: "chat" });
 
   return `You are ${brand.agent.name}, a conversational spirits advisor for ${brand.name}.
@@ -53,5 +68,16 @@ The user is browsing from market: ${market ?? "GB"}. Use this for pricing curren
 ## Generative UI
 ${catalogPrompt}
 
-When rendering UI components, include a brief intro sentence before the component. Don't duplicate information that's already visible in the rendered cards.`;
+When rendering UI components, include a brief intro sentence before the component. Don't duplicate information that's already visible in the rendered cards.
+
+${productContext ? `## Currently Viewed Product
+The user is currently viewing: **${productContext.name}** by ${productContext.brand}
+- Category: ${productContext.category}
+- ABV: ${productContext.abv}% | Volume: ${productContext.volume}
+- Description: ${productContext.description}
+${productContext.tastingNotes ? `- Tasting Notes — Nose: ${productContext.tastingNotes.nose} | Palate: ${productContext.tastingNotes.palate} | Finish: ${productContext.tastingNotes.finish}` : ""}
+${productContext.flavorProfile?.length ? `- Flavor Profile: ${productContext.flavorProfile.join(", ")}` : ""}
+
+When the user asks about "this product" or "this one", they mean **${productContext.name}**. You can discuss it directly without needing to search for it. If they ask for alternatives, search for products in a similar category or flavor profile.` : `## No Specific Product Viewed
+The user is browsing the collection. Help them discover products through conversation.`}`;
 }

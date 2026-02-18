@@ -8,17 +8,22 @@ import {
 } from "ai";
 import { pipeJsonRender } from "@json-render/core";
 import { getModel } from "@/lib/ai/provider";
-import { buildSystemPrompt } from "@/lib/ai/system-prompt";
+import { buildSystemPrompt, type ProductContext } from "@/lib/ai/system-prompt";
 import { commerceTools } from "@/lib/ai/tools";
 
 export async function POST(request: Request) {
   const {
     messages,
     market,
-  }: { messages: UIMessage[]; market?: string } = await request.json();
+    productContext,
+  }: {
+    messages: UIMessage[];
+    market?: string;
+    productContext?: ProductContext | null;
+  } = await request.json();
 
   const model = getModel();
-  const systemPrompt = buildSystemPrompt(market ?? "GB");
+  const systemPrompt = buildSystemPrompt(market ?? "GB", productContext);
   const modelMessages = await convertToModelMessages(messages);
 
   const result = streamText({

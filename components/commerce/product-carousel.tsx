@@ -26,8 +26,10 @@ interface CarouselProduct {
 
 export function ProductCarousel({
   products,
+  onNavigate,
 }: {
   products: CarouselProduct[];
+  onNavigate?: (productId: string) => void;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -67,7 +69,7 @@ export function ProductCarousel({
   if (products.length === 1) {
     return (
       <div className="max-w-md">
-        <ProductCard {...products[0]} />
+        <ProductCard {...products[0]} onNavigate={onNavigate} />
       </div>
     );
   }
@@ -97,7 +99,7 @@ export function ProductCarousel({
             key={product.productId}
             className="snap-start shrink-0 w-[300px]"
           >
-            <ProductCard {...product} />
+            <ProductCard {...product} onNavigate={onNavigate} />
           </div>
         ))}
       </div>

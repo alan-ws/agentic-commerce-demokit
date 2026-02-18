@@ -8,10 +8,22 @@ import { ComparisonGrid } from "@/components/commerce/comparison-grid";
 import { ChannelRouter } from "@/components/commerce/channel-router";
 import { AgeGateForm } from "@/components/commerce/age-gate-form";
 
+function dispatchViewProduct(productId: string) {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(
+      new CustomEvent("view-product", { detail: { productId } })
+    );
+  }
+}
+
 export const { registry, handlers } = defineRegistry(catalog, {
   components: {
-    ProductCard: ({ props }) => <ProductCard {...props} />,
-    ProductCarousel: ({ props }) => <ProductCarousel {...props} />,
+    ProductCard: ({ props }) => (
+      <ProductCard {...props} onNavigate={dispatchViewProduct} />
+    ),
+    ProductCarousel: ({ props }) => (
+      <ProductCarousel {...props} onNavigate={dispatchViewProduct} />
+    ),
     ComparisonGrid: ({ props }) => <ComparisonGrid {...props} />,
     ChannelRouter: ({ props }) => <ChannelRouter {...props} />,
     AgeGatePrompt: ({ props }) => (

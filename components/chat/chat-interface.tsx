@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Renderer } from "@/lib/render/renderer";
+import { useOptionalWidgetContext } from "@/components/widget/widget-context";
 import { brand } from "@/config/brand";
 import { Send, Bot, User, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -76,8 +77,34 @@ interface ChatInterfaceProps {
 }
 
 export function ChatInterface({ compact = false }: ChatInterfaceProps) {
+  const widgetCtx = useOptionalWidgetContext();
+  const productContextRef = useRef(widgetCtx?.currentProduct ?? null);
+  productContextRef.current = widgetCtx?.currentProduct ?? null;
+
   const transport = useMemo(
-    () => new DefaultChatTransport({ api: "/api/chat" }),
+    () =>
+      new DefaultChatTransport({
+        api: "/api/chat",
+        body: () => {
+          const p = productContextRef.current;
+          return {
+            market: "GB",
+            ...(p && {
+              productContext: {
+                id: p.id,
+                name: p.name,
+                brand: p.brand,
+                category: p.category,
+                description: p.description,
+                tastingNotes: p.tastingNotes,
+                flavorProfile: p.flavorProfile,
+                abv: p.abv,
+                volume: p.volume,
+              },
+            }),
+          };
+        },
+      }),
     []
   );
   const { messages, sendMessage, status } = useChat({ transport });
