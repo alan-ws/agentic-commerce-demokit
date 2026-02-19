@@ -23,9 +23,9 @@ export function WizardProgress({ currentStep }: WizardProgressProps) {
                 text-sm font-semibold transition-all duration-300
                 ${
                   isCompleted
-                    ? "bg-[#C8A951] text-white"
+                    ? "bg-foreground text-background"
                     : isCurrent
-                      ? "bg-[#1B365D] text-white ring-4 ring-[#1B365D]/20"
+                      ? "bg-foreground text-background ring-4 ring-foreground/20"
                       : "bg-muted text-muted-foreground"
                 }
               `}
@@ -42,7 +42,7 @@ export function WizardProgress({ currentStep }: WizardProgressProps) {
               <div
                 className={`
                   h-0.5 w-12 sm:w-16 transition-colors duration-300
-                  ${isCompleted ? "bg-[#C8A951]" : "bg-muted"}
+                  ${isCompleted ? "bg-foreground" : "bg-muted"}
                 `}
               />
             )}

@@ -117,13 +117,13 @@ export function DiscoveryWizard() {
       {/* Content */}
       {isSearching ? (
         <div className="flex flex-col items-center justify-center gap-4 py-16">
-          <Loader2 className="h-8 w-8 animate-spin text-[#C8A951]" />
+          <Loader2 className="h-8 w-8 animate-spin text-foreground" />
           <p className="text-muted-foreground">Finding your perfect spirit...</p>
         </div>
       ) : showResults ? (
         <div className="space-y-4">
           <div className="text-center space-y-2">
-            <h2 className="text-2xl font-semibold text-[#1B365D]">
+            <h2 className="text-2xl font-semibold text-foreground">
               Your Recommendations
             </h2>
             <p className="text-muted-foreground">

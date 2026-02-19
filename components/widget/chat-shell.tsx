@@ -70,7 +70,7 @@ export function ChatShell({ children }: { children: ReactNode }) {
         </div>
         <button
           onClick={() => setChatMode("docked")}
-          className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#1B365D] text-white shadow-lg hover:bg-[#1B365D]/90 transition-colors"
+          className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-lg hover:bg-foreground/90 transition-colors"
         >
           <MessageSquare className="h-6 w-6" />
         </button>
@@ -87,7 +87,7 @@ export function ChatShell({ children }: { children: ReactNode }) {
         style={{ left: floatPos.x, top: floatPos.y }}
       >
         <div
-          className="flex items-center justify-between px-3 py-2 border-b bg-[#1B365D] text-white cursor-grab active:cursor-grabbing select-none"
+          className="flex items-center justify-between px-3 py-2 border-b bg-foreground text-background cursor-grab active:cursor-grabbing select-none"
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
@@ -100,7 +100,7 @@ export function ChatShell({ children }: { children: ReactNode }) {
             <Button
               variant="ghost"
               size="icon"
-              className="h-7 w-7 text-white hover:bg-white/20"
+              className="h-7 w-7 text-background hover:bg-background/20"
               onClick={() => setChatMode("docked")}
               title="Dock"
             >
@@ -109,7 +109,7 @@ export function ChatShell({ children }: { children: ReactNode }) {
             <Button
               variant="ghost"
               size="icon"
-              className="h-7 w-7 text-white hover:bg-white/20"
+              className="h-7 w-7 text-background hover:bg-background/20"
               onClick={() => setChatMode("minimized")}
               title="Minimize"
             >
@@ -129,13 +129,13 @@ export function ChatShell({ children }: { children: ReactNode }) {
         "w-[400px] shrink-0 border-l flex flex-col h-full bg-background"
       )}
     >
-      <div className="flex items-center justify-between px-3 py-2 border-b bg-[#1B365D] text-white">
+      <div className="flex items-center justify-between px-3 py-2 border-b bg-foreground text-background">
         <span className="text-sm font-medium">Chat</span>
         <div className="flex items-center gap-1">
           <Button
             variant="ghost"
             size="icon"
-            className="h-7 w-7 text-white hover:bg-white/20"
+            className="h-7 w-7 text-background hover:bg-background/20"
             onClick={enterFloating}
             title="Float"
           >
@@ -144,7 +144,7 @@ export function ChatShell({ children }: { children: ReactNode }) {
           <Button
             variant="ghost"
             size="icon"
-            className="h-7 w-7 text-white hover:bg-white/20"
+            className="h-7 w-7 text-background hover:bg-background/20"
             onClick={() => setChatMode("minimized")}
             title="Minimize"
           >

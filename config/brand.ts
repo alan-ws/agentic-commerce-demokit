@@ -3,9 +3,9 @@ export const brand = {
   tagline: "Celebrating Life, Every Day, Everywhere",
   logo: "/logo.svg",
   theme: {
-    primary: "#1B365D",
-    secondary: "#C8A951",
-    background: "#FAFAFA",
+    primary: "#171717",
+    secondary: "#F5F5F5",
+    background: "#FFFFFF",
     foreground: "#1A1A1A",
     muted: "#F5F5F5",
   },

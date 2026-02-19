@@ -4,9 +4,24 @@ import {
   searchProducts,
   getProductById,
   compareProducts,
+  type Product,
 } from "@/lib/commerce/products";
 import { checkAvailability } from "@/lib/commerce/availability";
 import { getPurchaseChannels } from "@/lib/commerce/routing";
+
+const marketToCurrency: Record<string, string> = {
+  GB: "GBP",
+  US: "USD",
+  DE: "EUR",
+  FR: "EUR",
+  IT: "EUR",
+  ES: "EUR",
+};
+
+function resolvePrice(product: Product, market?: string) {
+  const currency = marketToCurrency[market ?? "GB"] ?? "GBP";
+  return { price: product.price[currency] ?? product.price["GBP"] ?? 0, currency };
+}
 
 export const commerceTools = {
   search_products: tool({
@@ -52,18 +67,22 @@ export const commerceTools = {
     execute: async (params) => {
       const results = searchProducts(params);
       return {
-        products: results.map((p) => ({
-          id: p.id,
-          name: p.name,
-          brand: p.brand,
-          category: p.category,
-          price: p.price,
-          abv: p.abv,
-          volume: p.volume,
-          description: p.description,
-          flavorProfile: p.flavorProfile,
-          occasions: p.occasions,
-        })),
+        products: results.map((p) => {
+          const { price, currency } = resolvePrice(p, params.market);
+          return {
+            id: p.id,
+            name: p.name,
+            brand: p.brand,
+            category: p.category,
+            price,
+            currency,
+            abv: p.abv,
+            volume: p.volume,
+            description: p.description,
+            flavorProfile: p.flavorProfile,
+            occasions: p.occasions,
+          };
+        }),
         count: results.length,
       };
     },
@@ -74,11 +93,28 @@ export const commerceTools = {
       "Get full details for a specific product including tasting notes, description, and pricing.",
     inputSchema: z.object({
       productId: z.string().describe("The product ID"),
+      market: z.string().optional().describe("Market code for pricing (e.g., GB, US)"),
     }),
-    execute: async ({ productId }) => {
+    execute: async ({ productId, market }) => {
       const product = getProductById(productId);
       if (!product) return { error: "Product not found" };
-      return product;
+      const { price, currency } = resolvePrice(product, market);
+      return {
+        id: product.id,
+        name: product.name,
+        brand: product.brand,
+        category: product.category,
+        subcategory: product.subcategory,
+        description: product.description,
+        tastingNotes: product.tastingNotes,
+        abv: product.abv,
+        volume: product.volume,
+        price,
+        currency,
+        image: product.image,
+        occasions: product.occasions,
+        flavorProfile: product.flavorProfile,
+      };
     },
   }),
 
@@ -126,17 +162,21 @@ export const commerceTools = {
     execute: async ({ productIds }) => {
       const products = compareProducts(productIds);
       return {
-        products: products.map((p) => ({
-          id: p.id,
-          name: p.name,
-          brand: p.brand,
-          category: p.category,
-          price: p.price,
-          abv: p.abv,
-          volume: p.volume,
-          flavorProfile: p.flavorProfile,
-          tastingNotes: p.tastingNotes,
-        })),
+        products: products.map((p) => {
+          const { price, currency } = resolvePrice(p);
+          return {
+            id: p.id,
+            name: p.name,
+            brand: p.brand,
+            category: p.category,
+            price,
+            currency,
+            abv: p.abv,
+            volume: p.volume,
+            flavorProfile: p.flavorProfile,
+            tastingNotes: p.tastingNotes,
+          };
+        }),
       };
     },
   }),

@@ -25,7 +25,7 @@ export function MessageBubble({ role, children }: MessageBubbleProps) {
             "text-xs",
             isUser
               ? "bg-primary text-primary-foreground"
-              : "bg-[#1B365D] text-white"
+              : "bg-foreground text-background"
           )}
         >
           {isUser ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}

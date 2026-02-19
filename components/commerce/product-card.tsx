@@ -57,7 +57,7 @@ export function ProductCard({
 
   return (
     <Card
-      className={`w-full max-w-md overflow-hidden${onNavigate ? " cursor-pointer transition-shadow hover:shadow-lg hover:ring-1 hover:ring-[#C8A951]/40" : ""}`}
+      className={`w-full max-w-md overflow-hidden${onNavigate ? " cursor-pointer transition-shadow hover:shadow-lg hover:ring-1 hover:ring-ring" : ""}`}
       onClick={onNavigate ? () => onNavigate(productId) : undefined}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}

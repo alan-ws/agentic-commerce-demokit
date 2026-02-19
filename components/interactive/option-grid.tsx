@@ -67,7 +67,7 @@ export function OptionGrid({
   return (
     <div className="space-y-6">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-semibold text-[#1B365D]">{prompt}</h2>
+        <h2 className="text-2xl font-semibold text-foreground">{prompt}</h2>
         <p className="text-muted-foreground">{description}</p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -85,28 +85,26 @@ export function OptionGrid({
                 hover:shadow-lg hover:-translate-y-0.5
                 ${
                   isSelected
-                    ? "border-[#C8A951] bg-[#C8A951]/5 shadow-md"
-                    : "border-border bg-card hover:border-[#C8A951]/50"
+                    ? "border-foreground bg-accent shadow-md"
+                    : "border-border bg-card hover:border-foreground/50"
                 }
               `}
             >
               {isSelected && (
-                <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-[#C8A951]" />
+                <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-foreground" />
               )}
               {Icon && (
                 <Icon
                   className={`h-7 w-7 transition-colors ${
                     isSelected
-                      ? "text-[#C8A951]"
-                      : "text-[#1B365D] group-hover:text-[#C8A951]"
+                      ? "text-foreground"
+                      : "text-muted-foreground group-hover:text-foreground"
                   }`}
                 />
               )}
               <div className="space-y-1">
                 <div
-                  className={`font-medium text-sm ${
-                    isSelected ? "text-[#1B365D]" : "text-foreground"
-                  }`}
+                  className="font-medium text-sm text-foreground"
                 >
                   {option.label}
                 </div>

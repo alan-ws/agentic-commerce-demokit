@@ -34,7 +34,7 @@ function MessageContent({ message }: { message: UIMessage }) {
             "text-xs",
             isUser
               ? "bg-primary text-primary-foreground"
-              : "bg-[#1B365D] text-white"
+              : "bg-foreground text-background"
           )}
         >
           {isUser ? (
@@ -144,7 +144,7 @@ export function ChatInterface({ compact = false }: ChatInterfaceProps) {
         <div className="max-w-3xl mx-auto py-4">
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <Bot className="h-12 w-12 text-[#1B365D] mb-4" />
+              <Bot className="h-12 w-12 text-foreground mb-4" />
               <h2 className="text-lg font-semibold mb-1">
                 {brand.agent.name}
               </h2>
@@ -161,7 +161,7 @@ export function ChatInterface({ compact = false }: ChatInterfaceProps) {
           {isLoading && messages[messages.length - 1]?.role === "user" && (
             <div className="flex gap-3 py-3">
               <Avatar className="h-8 w-8 shrink-0 mt-1">
-                <AvatarFallback className="bg-[#1B365D] text-white text-xs">
+                <AvatarFallback className="bg-foreground text-background text-xs">
                   <Bot className="h-4 w-4" />
                 </AvatarFallback>
               </Avatar>

@@ -42,7 +42,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
       <div className="space-y-2">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-[#1B365D]">
+            <h1 className="text-2xl font-bold text-foreground">
               {product.name}
             </h1>
             <p className="text-muted-foreground">{product.brand}</p>
@@ -59,7 +59,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         </div>
 
         <div className="flex gap-2">
-          <Badge className="bg-[#1B365D] text-white capitalize">
+          <Badge className="capitalize">
             {product.category.replace("-", " ")}
           </Badge>
           {product.subcategory && (
@@ -78,7 +78,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             <Badge
               key={flavor}
               variant="secondary"
-              className="text-xs border-[#C8A951]/30 bg-[#C8A951]/10 text-[#1B365D]"
+              className="text-xs"
             >
               {flavor}
             </Badge>
@@ -89,24 +89,24 @@ export function ProductDetail({ product }: ProductDetailProps) {
       <Separator />
 
       <div className="space-y-3">
-        <h2 className="text-lg font-semibold text-[#1B365D]">Tasting Notes</h2>
+        <h2 className="text-lg font-semibold text-foreground">Tasting Notes</h2>
         <div className="space-y-2.5 text-sm">
           <div className="flex items-start gap-3">
-            <Wine className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A951]" />
+            <Wine className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
             <div>
               <span className="font-medium">Nose:</span>{" "}
               {product.tastingNotes.nose}
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Droplets className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A951]" />
+            <Droplets className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
             <div>
               <span className="font-medium">Palate:</span>{" "}
               {product.tastingNotes.palate}
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Flame className="mt-0.5 h-4 w-4 shrink-0 text-[#C8A951]" />
+            <Flame className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
             <div>
               <span className="font-medium">Finish:</span>{" "}
               {product.tastingNotes.finish}
@@ -119,7 +119,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         <>
           <Separator />
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-[#1B365D]">
+            <h2 className="text-lg font-semibold text-foreground">
               Perfect For
             </h2>
             <div className="flex flex-wrap gap-1.5">
