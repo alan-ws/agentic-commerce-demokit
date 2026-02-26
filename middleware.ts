@@ -56,6 +56,6 @@ export const config = {
      * - api routes (handle their own compliance)
      * - public files (images, etc.)
      */
-    "/((?!_next|api|\\.well-known|favicon\\.ico|sitemap\\.xml|robots\\.txt|products|logo|agent-avatar|.*\\.svg|.*\\.png|.*\\.jpg).*)",
+    "/((?!_next|api|jitui|mcp-render|\\.well-known|favicon\\.ico|sitemap\\.xml|robots\\.txt|products|logo|agent-avatar|.*\\.svg|.*\\.png|.*\\.jpg).*)",
   ],
 };

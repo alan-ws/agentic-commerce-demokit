@@ -24,22 +24,8 @@ import {
 } from "@/lib/ucp/handlers/checkout";
 import { negotiateCapabilities } from "@/lib/ucp/negotiation";
 import { generateProfile } from "@/lib/ucp/profile";
-import { registerWidgets, WIDGET_URI } from "@/lib/mcp-widgets/register";
-import {
-  buildProductCardSpec,
-  buildProductGridSpec,
-  buildChannelRouterSpec,
-} from "@/lib/mcp-widgets/spec-builders";
 
-export const runtime = "nodejs";
-
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000");
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
 
 function jsonResult(data: unknown) {
   return {
@@ -59,16 +45,8 @@ function errorResult(code: string, message: string) {
   };
 }
 
-const widgetMeta = {
-  ui: { resourceUri: WIDGET_URI },
-  "openai/outputTemplate": WIDGET_URI,
-};
-
-const handler = createMcpHandler(
+export const mcpHandler = createMcpHandler(
   (server) => {
-    // Register the generic widget renderer resource
-    registerWidgets(server, BASE_URL);
-
     // =========================================================================
     // UCP Discovery
     // =========================================================================
@@ -122,7 +100,6 @@ const handler = createMcpHandler(
                   preferences: z.boolean().optional(),
                   marketing: z.boolean().optional(),
                   sale_of_data: z.boolean().optional(),
-                  date_of_birth: z.string().optional().describe("ISO date (YYYY-MM-DD) for age verification"),
                 })
                 .optional()
                 .describe("GDPR/CCPA consent flags"),
@@ -216,7 +193,6 @@ const handler = createMcpHandler(
                   preferences: z.boolean().optional(),
                   marketing: z.boolean().optional(),
                   sale_of_data: z.boolean().optional(),
-                  date_of_birth: z.string().optional().describe("ISO date (YYYY-MM-DD) for age verification"),
                 })
                 .optional(),
             })
@@ -391,12 +367,10 @@ const handler = createMcpHandler(
             .optional()
             .describe("Market code (GB, US, etc.)"),
         },
-        _meta: widgetMeta,
       },
       async (params) => {
         const results = searchProducts(params);
-        const spec = buildProductGridSpec(results, BASE_URL);
-        return jsonResult({ spec, data: { products: results, count: results.length } });
+        return jsonResult({ products: results, count: results.length });
       }
     );
 
@@ -408,15 +382,13 @@ const handler = createMcpHandler(
         inputSchema: {
           productId: z.string().describe("The product ID"),
         },
-        _meta: widgetMeta,
       },
       async ({ productId }) => {
         const product = getProductById(productId);
         if (!product) {
           return errorResult("product_not_found", "Product not found");
         }
-        const spec = buildProductCardSpec(product, BASE_URL);
-        return jsonResult({ spec, data: product });
+        return jsonResult(product);
       }
     );
 
@@ -444,18 +416,16 @@ const handler = createMcpHandler(
           productId: z.string().describe("The product ID"),
           market: z.string().describe("Market code (GB, US, etc.)"),
         },
-        _meta: widgetMeta,
       },
       async ({ productId, market }) => {
         const channels = getPurchaseChannels(productId, market);
         const product = getProductById(productId);
-        const channelData = {
+        return jsonResult({
           productId,
           productName: product?.name ?? productId,
+          market,
           channels,
-        };
-        const spec = buildChannelRouterSpec(channelData);
-        return jsonResult({ spec, data: { ...channelData, market } });
+        });
       }
     );
 
@@ -479,10 +449,10 @@ const handler = createMcpHandler(
     },
   },
   {
-    basePath: "/api/mcp",
+    streamableHttpEndpoint: "/api/mcp",
+    sseEndpoint: "/api/mcp/sse",
+    sseMessageEndpoint: "/api/mcp/message",
     maxDuration: 60,
     verboseLogs: process.env.NODE_ENV === "development",
   }
 );
-
-export { handler as GET, handler as POST };

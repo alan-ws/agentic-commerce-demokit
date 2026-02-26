@@ -18,7 +18,7 @@ export function generateProfile(baseUrl: string) {
       endpoint:
         transport === "rest"
           ? `${baseUrl}/api/ucp`
-          : `${baseUrl}/api/mcp`,
+          : `${baseUrl}/api/mcp/mcp`,
     })),
   };
 

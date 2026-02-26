@@ -9,7 +9,7 @@
 
 import { randomUUID } from "crypto";
 import { getProductById } from "@/lib/commerce/products";
-import { getComplianceInfo } from "@/lib/commerce/compliance";
+import { getComplianceInfo, verifyAge } from "@/lib/commerce/compliance";
 import { ucpConfig } from "@/lib/ucp/config";
 import type {
   CheckoutSession,
@@ -154,17 +154,37 @@ function generateMessages(
     });
   }
 
-  // Age verification for alcohol — requires_buyer_review escalation
+  // Age verification for alcohol — blocking escalation
   if (capabilities.includes("dev.ucp.shopping.buyer_consent")) {
     const compliance = getComplianceInfo(session.market);
 
     if (compliance.ageThreshold > 0) {
-      msgs.push({
-        type: "warning",
-        code: "age_verification_required",
-        content: `This purchase requires age verification (${compliance.ageThreshold}+ in ${session.market}). Buyer must confirm legal drinking age.`,
-        path: "$.buyer",
-      });
+      if (session.buyer?.consent?.age_verified === true) {
+        // Already verified — no message needed
+      } else if (session.buyer?.consent?.date_of_birth) {
+        const result = verifyAge(session.buyer.consent.date_of_birth, session.market);
+        if (result.verified) {
+          // Mutate session to mark verified
+          if (!session.buyer.consent) session.buyer.consent = {};
+          session.buyer.consent.age_verified = true;
+        } else {
+          msgs.push({
+            type: "error",
+            code: "age_verification_failed",
+            content: `You must be at least ${compliance.ageThreshold} years old to purchase alcohol in ${session.market}.`,
+            severity: "requires_buyer_input",
+            path: "$.buyer.consent.date_of_birth",
+          });
+        }
+      } else {
+        msgs.push({
+          type: "error",
+          code: "age_verification_required",
+          content: `Age verification required (${compliance.ageThreshold}+ in ${session.market}). Provide date_of_birth in buyer.consent.`,
+          severity: "requires_buyer_input",
+          path: "$.buyer.consent.date_of_birth",
+        });
+      }
     }
   }
 
@@ -259,6 +279,18 @@ export async function completeCheckout(
   if (session.status !== "ready_for_complete") {
     throw new Error(
       `Checkout is not ready for completion (status: ${session.status})`
+    );
+  }
+
+  // Explicit age verification guard for alcohol markets
+  const compliance = getComplianceInfo(session.market);
+  if (
+    compliance.ageThreshold > 0 &&
+    options.capabilities.includes("dev.ucp.shopping.buyer_consent") &&
+    session.buyer?.consent?.age_verified !== true
+  ) {
+    throw new Error(
+      `Age verification required (${compliance.ageThreshold}+ in ${session.market}) before completing checkout`
     );
   }
 

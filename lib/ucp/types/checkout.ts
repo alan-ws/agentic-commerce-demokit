@@ -78,6 +78,8 @@ export interface BuyerConsent {
   preferences?: boolean;
   marketing?: boolean;
   sale_of_data?: boolean;
+  date_of_birth?: string;   // ISO date input from buyer
+  age_verified?: boolean;    // computed by server after DOB validation
 }
 
 export interface Buyer {

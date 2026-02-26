@@ -26,6 +26,7 @@ export const CreateCheckoutRequestSchema = z.object({
           preferences: z.boolean().optional(),
           marketing: z.boolean().optional(),
           sale_of_data: z.boolean().optional(),
+          date_of_birth: z.string().optional(),
         })
         .optional(),
     })
@@ -65,6 +66,7 @@ export const UpdateCheckoutRequestSchema = z.object({
           preferences: z.boolean().optional(),
           marketing: z.boolean().optional(),
           sale_of_data: z.boolean().optional(),
+          date_of_birth: z.string().optional(),
         })
         .optional(),
     })
