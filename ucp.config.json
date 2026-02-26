@@ -17,8 +17,8 @@
   "domain": "localhost:3000",
   "existing_apis": {},
   "policy_urls": {
-    "privacy": "https://www.diageo.com/privacy-policy",
-    "terms": "https://www.diageo.com/terms-of-use",
+    "privacy": "https://www.oegaid.com/privacy-policy",
+    "terms": "https://www.oegaid.com/terms-of-use",
     "refunds": "",
     "shipping": ""
   },

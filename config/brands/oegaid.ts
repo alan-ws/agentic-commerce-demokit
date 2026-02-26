@@ -1,6 +1,6 @@
 export const brand = {
-  key: "diageo",
-  name: "Diageo",
+  key: "oegaid",
+  name: "Oegaid",
   tagline: "Celebrating Life, Every Day, Everywhere",
   logo: "/logo.svg",
   theme: {
@@ -11,18 +11,18 @@ export const brand = {
     muted: "#F5F5F5",
   },
   agent: {
-    name: "Diageo Discovery",
+    name: "Oegaid Discovery",
     avatar: "/agent-avatar.svg",
     toneOfVoice:
       "Warm, knowledgeable, and sophisticated. Like a trusted bartender who knows their craft.",
     greeting:
-      "Welcome to Diageo Discovery. I can help you find the perfect spirit for any occasion. What are you looking for today?",
+      "Welcome to Oegaid Discovery. I can help you find the perfect spirit for any occasion. What are you looking for today?",
   },
   policyUrls: {
-    privacy: "https://www.diageo.com/privacy-policy",
-    terms: "https://www.diageo.com/terms-of-use",
+    privacy: "https://www.oegaid.com/privacy-policy",
+    terms: "https://www.oegaid.com/terms-of-use",
     refunds: "",
     shipping: "",
   },
-  mcpServerName: "Diageo UCP Commerce",
+  mcpServerName: "Oegaid UCP Commerce",
 } as const;

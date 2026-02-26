@@ -62,7 +62,7 @@ export default function JitUiPage() {
     const handler = (ev: MessageEvent) => {
       try {
         const data = typeof ev.data === "string" ? JSON.parse(ev.data) : ev.data;
-        if (data?.type === "diageo-widget-resize" && iframeRef.current) {
+        if (data?.type === "oegaid-widget-resize" && iframeRef.current) {
           iframeRef.current.style.height = `${data.height + 16}px`;
         }
       } catch {}

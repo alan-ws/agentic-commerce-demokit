@@ -76,7 +76,7 @@ function McpRenderInner() {
       try {
         const h = document.documentElement.scrollHeight;
         window.parent.postMessage(
-          { type: "diageo-widget-resize", height: h },
+          { type: "oegaid-widget-resize", height: h },
           "*"
         );
       } catch {}

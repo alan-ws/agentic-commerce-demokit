@@ -9,7 +9,7 @@ export function rendererTemplate(baseUrl: string): string {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Diageo Widget</title>
+<title>Widget</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 100%; height: 100%; overflow: hidden; background: transparent; }
@@ -63,7 +63,7 @@ export function rendererTemplate(baseUrl: string): string {
     window.addEventListener("message", function(ev) {
       try {
         var data = typeof ev.data === "string" ? JSON.parse(ev.data) : ev.data;
-        if (data && data.type === "diageo-widget-resize" && data.height) {
+        if (data && data.type === "oegaid-widget-resize" && data.height) {
           var h = data.height + 8;
           frame.style.height = h + "px";
           // Also resize ourselves for the outer host (ChatGPT)
