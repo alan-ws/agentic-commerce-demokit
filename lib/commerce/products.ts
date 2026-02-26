@@ -1,4 +1,8 @@
-import productsData from "@/config/products.json";
+import diageoProducts from "@/config/products/diageo.json";
+import meridianProducts from "@/config/products/meridian.json";
+import solaraProducts from "@/config/products/solara.json";
+
+const brandKey = process.env.BRAND_KEY ?? "diageo";
 
 export interface TastingNotes {
   nose: string;
@@ -29,7 +33,13 @@ export interface Product {
   flavorProfile: string[];
 }
 
-const products: Product[] = productsData as Product[];
+const productMap: Record<string, unknown[]> = {
+  diageo: diageoProducts,
+  meridian: meridianProducts,
+  solara: solaraProducts,
+};
+
+const products: Product[] = (productMap[brandKey] ?? diageoProducts) as Product[];
 
 export function getAllProducts(): Product[] {
   return products;

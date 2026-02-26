@@ -1,7 +1,9 @@
 /**
- * UCP Configuration — loaded from ucp.config.json
+ * UCP Configuration — loaded from brand config
  * Re-exported as typed module to avoid JSON import resolution issues.
  */
+
+import { brand } from "@/config/brand";
 
 export const ucpConfig = {
   ucp_version: "2026-01-11",
@@ -15,9 +17,9 @@ export const ucpConfig = {
   payment_handlers: [] as string[],
   domain: process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
   policy_urls: {
-    privacy: "https://www.diageo.com/privacy-policy",
-    terms: "https://www.diageo.com/terms-of-use",
-    refunds: "",
-    shipping: "",
+    privacy: brand.policyUrls.privacy,
+    terms: brand.policyUrls.terms,
+    refunds: brand.policyUrls.refunds,
+    shipping: brand.policyUrls.shipping,
   },
 };

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "sol-reposado",
+    "name": "Sol Reposado Tequila",
+    "brand": "Sol",
+    "category": "tequila",
+    "subcategory": "reposado",
+    "description": "Rested six months in American oak under the Jalisco sun. Golden warmth, cooked agave, and a buttery finish that lingers like a sunset.",
+    "tastingNotes": {
+      "nose": "Roasted agave, butterscotch, and cinnamon",
+      "palate": "Silky caramel, toasted oak, and white pepper",
+      "finish": "Long, warm, and pleasantly sweet"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 38, "USD": 48, "EUR": 42 },
+    "image": "/products/sol-reposado.jpg",
+    "occasions": ["casual-drink", "dinner-pairing", "cocktails"],
+    "flavorProfile": ["smooth", "sweet", "spicy"]
+  },
+  {
+    "id": "sol-blanco",
+    "name": "Sol Blanco Tequila",
+    "brand": "Sol",
+    "category": "tequila",
+    "subcategory": "blanco",
+    "description": "Unaged, crystal clear, and bursting with fresh agave character. Distilled from 100% blue Weber agave grown in the Los Altos highlands.",
+    "tastingNotes": {
+      "nose": "Fresh agave, lime zest, and jalapeño",
+      "palate": "Bright citrus, herbaceous agave, and mineral notes",
+      "finish": "Clean, crisp, with a pleasant peppery kick"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 30, "USD": 38, "EUR": 34 },
+    "image": "/products/sol-blanco.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["bold", "spicy"]
+  },
+  {
+    "id": "cana-dorada-rum",
+    "name": "Caña Dorada Rum",
+    "brand": "Caña Dorada",
+    "category": "rum",
+    "subcategory": "premium",
+    "description": "A Barbadian rum aged 8 years in charred bourbon barrels. Deep amber, rich molasses, and tropical warmth — pure Caribbean gold.",
+    "tastingNotes": {
+      "nose": "Molasses, toasted coconut, and tropical fruit",
+      "palate": "Rich toffee, banana, and warm baking spices",
+      "finish": "Long, velvety smooth, with a hint of cocoa"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 42, "USD": 52, "EUR": 46 },
+    "image": "/products/cana-dorada-rum.jpg",
+    "occasions": ["casual-drink", "dinner-pairing", "gifting"],
+    "flavorProfile": ["sweet", "smooth", "bold"]
+  },
+  {
+    "id": "lumbre-mezcal",
+    "name": "Lumbre Mezcal",
+    "brand": "Lumbre",
+    "category": "tequila",
+    "subcategory": "mezcal",
+    "description": "Artisanal mezcal from Oaxaca, pit-roasted over mesquite for three days. Raw, smoky, and untamed — fire in a bottle.",
+    "tastingNotes": {
+      "nose": "Campfire smoke, roasted agave, and wet earth",
+      "palate": "Intense smoke, green chili, and charred pineapple",
+      "finish": "Very long, smoky, with a surprising mineral sweetness"
+    },
+    "abv": 45,
+    "volume": "700ml",
+    "price": { "GBP": 48, "USD": 60, "EUR": 54 },
+    "image": "/products/lumbre-mezcal.jpg",
+    "occasions": ["casual-drink", "cocktails"],
+    "flavorProfile": ["smoky", "bold", "spicy"]
+  },
+  {
+    "id": "terracotta-anejo",
+    "name": "Terracotta Añejo Tequila",
+    "brand": "Terracotta",
+    "category": "tequila",
+    "subcategory": "anejo",
+    "description": "Aged 18 months in French oak, this añejo is sophisticated and dessert-like. Dark amber with notes of fig, caramel, and toasted almond.",
+    "tastingNotes": {
+      "nose": "Fig, dark caramel, and toasted almond",
+      "palate": "Rich vanilla, dried fruit, and warm oak spice",
+      "finish": "Long, luxurious, and silky smooth"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 72, "USD": 90, "EUR": 80 },
+    "image": "/products/terracotta-anejo.jpg",
+    "occasions": ["celebration", "gifting", "dinner-pairing"],
+    "flavorProfile": ["smooth", "sweet"]
+  },
+  {
+    "id": "isla-del-sol-rum",
+    "name": "Isla del Sol Coconut Rum",
+    "brand": "Isla del Sol",
+    "category": "rum",
+    "subcategory": "flavored",
+    "description": "A light Caribbean rum infused with real coconut and a touch of lime. Sunshine in a glass — built for tropical cocktails.",
+    "tastingNotes": {
+      "nose": "Fresh coconut, lime, and vanilla",
+      "palate": "Creamy coconut, citrus, and light caramel",
+      "finish": "Clean, tropical, and refreshing"
+    },
+    "abv": 25,
+    "volume": "700ml",
+    "price": { "GBP": 18, "USD": 22, "EUR": 20 },
+    "image": "/products/isla-del-sol-rum.jpg",
+    "occasions": ["cocktails", "casual-drink", "celebration"],
+    "flavorProfile": ["sweet", "fruity", "smooth"]
+  },
+  {
+    "id": "fuego-spiced-rum",
+    "name": "Fuego Spiced Rum",
+    "brand": "Fuego",
+    "category": "rum",
+    "subcategory": "spiced",
+    "description": "A Guatemalan rum infused with habanero, cinnamon, and allspice. Sweet heat that builds slowly — not for the faint of heart.",
+    "tastingNotes": {
+      "nose": "Cinnamon, brown sugar, and a whisper of chili",
+      "palate": "Sweet molasses, warm spice, then building heat",
+      "finish": "Long, warming, with a slow chili burn"
+    },
+    "abv": 35,
+    "volume": "700ml",
+    "price": { "GBP": 24, "USD": 30, "EUR": 27 },
+    "image": "/products/fuego-spiced-rum.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["spicy", "sweet", "bold"]
+  },
+  {
+    "id": "solstice-cristalino",
+    "name": "Solstice Cristalino Tequila",
+    "brand": "Solstice",
+    "category": "tequila",
+    "subcategory": "anejo",
+    "description": "An añejo filtered through charcoal to crystal clarity. All the depth of aged tequila with the brightness of a blanco — the best of both worlds.",
+    "tastingNotes": {
+      "nose": "Vanilla, white peach, and subtle oak",
+      "palate": "Smooth agave, butterscotch, and gentle spice",
+      "finish": "Elegant, clean, and surprisingly complex"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 55, "USD": 68, "EUR": 60 },
+    "image": "/products/solstice-cristalino.jpg",
+    "occasions": ["celebration", "gifting", "dinner-pairing"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  }
+]

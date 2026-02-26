@@ -1,4 +1,6 @@
-export const metadata = { title: "Diageo Widget" };
+import { brand } from "@/config/brand";
+
+export const metadata = { title: `${brand.name} Widget` };
 
 export default function McpRenderLayout({
   children,

@@ -11,6 +11,7 @@
 
 import { createMcpHandler } from "mcp-handler";
 import { z } from "zod";
+import { brand } from "@/config/brand";
 import { searchProducts, getProductById } from "@/lib/commerce/products";
 import { checkAvailability } from "@/lib/commerce/availability";
 import { getPurchaseChannels } from "@/lib/commerce/routing";
@@ -353,7 +354,7 @@ const handler = createMcpHandler(
       {
         title: "Search Products",
         description:
-          "Search the Diageo product catalogue by text query, category, occasion, flavor, or price range",
+          `Search the ${brand.name} product catalogue by text query, category, occasion, flavor, or price range`,
         inputSchema: {
           q: z.string().optional().describe("Text search query"),
           category: z
@@ -474,7 +475,7 @@ const handler = createMcpHandler(
   },
   {
     serverInfo: {
-      name: "Diageo UCP Commerce",
+      name: brand.mcpServerName,
       version: "2026-01-11",
     },
   },

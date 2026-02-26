@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { WidgetProvider } from "@/components/widget/widget-context";
 import { ChatShell } from "@/components/widget/chat-shell";
+import { brand } from "@/config/brand";
 
 export const metadata: Metadata = {
-  title: "Diageo Discovery Widget",
+  title: `${brand.agent.name} Widget`,
 };
 
 export default function WidgetLayout({

@@ -1,4 +1,5 @@
 import { getProductById } from "./products";
+import { brand } from "@/config/brand";
 
 export interface AvailabilityResult {
   productId: string;
@@ -48,7 +49,7 @@ export function checkAvailability(
     if (market === "GB" && price > 30) {
       channels.push({
         type: "d2c" as const,
-        name: "Diageo Direct",
+        name: `${brand.name} Direct`,
         inStock: seed % 3 !== 0,
         price,
         currency,

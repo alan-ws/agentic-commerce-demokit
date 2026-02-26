@@ -1,0 +1,154 @@
+[
+  {
+    "id": "tideline-single-malt",
+    "name": "Tideline Single Malt",
+    "brand": "Tideline",
+    "category": "scotch",
+    "subcategory": "single-malt",
+    "description": "A coastal Speyside single malt aged 12 years in sea-air warehouses. Briny minerality meets honey sweetness — the taste of a Scottish shoreline.",
+    "tastingNotes": {
+      "nose": "Sea salt, heather honey, and green apple",
+      "palate": "Salted caramel, citrus peel, and gentle smoke",
+      "finish": "Medium, clean, with a mineral tang"
+    },
+    "abv": 43,
+    "volume": "700ml",
+    "price": { "GBP": 42, "USD": 55, "EUR": 48 },
+    "image": "/products/tideline-single-malt.jpg",
+    "occasions": ["casual-drink", "dinner-pairing", "gifting"],
+    "flavorProfile": ["smooth", "sweet", "smoky"]
+  },
+  {
+    "id": "harbourmaster-gin",
+    "name": "Harbourmaster Gin",
+    "brand": "Harbourmaster",
+    "category": "gin",
+    "subcategory": "london-dry",
+    "description": "A small-batch London Dry with kelp, samphire, and coastal botanicals hand-foraged from the Scottish coast. Crisp and unmistakably maritime.",
+    "tastingNotes": {
+      "nose": "Juniper, sea breeze, and lemon zest",
+      "palate": "Bright citrus, saline minerality, and cracked pepper",
+      "finish": "Long, dry, and refreshingly coastal"
+    },
+    "abv": 42,
+    "volume": "700ml",
+    "price": { "GBP": 32, "USD": 40, "EUR": 36 },
+    "image": "/products/harbourmaster-gin.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["bold", "spicy"]
+  },
+  {
+    "id": "northshore-vodka",
+    "name": "Northshore Vodka",
+    "brand": "Northshore",
+    "category": "vodka",
+    "subcategory": "premium",
+    "description": "Triple-distilled from Scottish winter wheat and filtered through limestone. Exceptionally pure with a silky mouthfeel.",
+    "tastingNotes": {
+      "nose": "Clean grain, white flowers, and a hint of chalk",
+      "palate": "Silky smooth, subtly sweet, with a mineral backbone",
+      "finish": "Clean, crisp, and elegantly dry"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 28, "USD": 35, "EUR": 32 },
+    "image": "/products/northshore-vodka.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["smooth"]
+  },
+  {
+    "id": "driftwood-blended",
+    "name": "Driftwood Blended Scotch",
+    "brand": "Driftwood",
+    "category": "scotch",
+    "subcategory": "blended",
+    "description": "A carefully balanced blend of Highland and Islay malts, inspired by evenings around a beach bonfire. Smoke, fruit, and warmth in every sip.",
+    "tastingNotes": {
+      "nose": "Bonfire smoke, dried apricot, and vanilla",
+      "palate": "Honeyed malt, gentle peat, and baked apple",
+      "finish": "Warm, lingering smoke with a toffee sweetness"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 24, "USD": 30, "EUR": 27 },
+    "image": "/products/driftwood-blended.jpg",
+    "occasions": ["casual-drink", "cocktails"],
+    "flavorProfile": ["smoky", "sweet", "smooth"]
+  },
+  {
+    "id": "compass-rose-rum",
+    "name": "Compass Rose Spiced Rum",
+    "brand": "Compass Rose",
+    "category": "rum",
+    "subcategory": "spiced",
+    "description": "A Caribbean-sourced rum infused with cinnamon bark, clove, and orange peel — finished in the cool coastal air of Aberdeen.",
+    "tastingNotes": {
+      "nose": "Cinnamon, orange marmalade, and brown sugar",
+      "palate": "Warm spice, vanilla cream, and dried fruit",
+      "finish": "Medium, smooth, with a warming spice kick"
+    },
+    "abv": 37.5,
+    "volume": "700ml",
+    "price": { "GBP": 22, "USD": 28, "EUR": 25 },
+    "image": "/products/compass-rose-rum.jpg",
+    "occasions": ["cocktails", "casual-drink"],
+    "flavorProfile": ["sweet", "spicy", "smooth"]
+  },
+  {
+    "id": "salt-meadow-gin",
+    "name": "Salt Meadow Elderflower Gin",
+    "brand": "Salt Meadow",
+    "category": "gin",
+    "subcategory": "premium",
+    "description": "A delicate gin with wild elderflower, meadowsweet, and coastal grasses. Floral and light — perfect for a summer G&T.",
+    "tastingNotes": {
+      "nose": "Elderflower, cut grass, and soft juniper",
+      "palate": "Light, floral, with honeyed sweetness and gentle citrus",
+      "finish": "Crisp, clean, and refreshingly short"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 35, "USD": 44, "EUR": 39 },
+    "image": "/products/salt-meadow-gin.jpg",
+    "occasions": ["cocktails", "celebration", "gifting"],
+    "flavorProfile": ["fruity", "smooth"]
+  },
+  {
+    "id": "stormbreak-cask-strength",
+    "name": "Stormbreak Cask Strength",
+    "brand": "Stormbreak",
+    "category": "scotch",
+    "subcategory": "single-malt",
+    "description": "An Islay-style cask strength single malt matured in ex-sherry casks. Intense, briny, and unapologetically bold — for the adventurous drinker.",
+    "tastingNotes": {
+      "nose": "Iodine, dark chocolate, and smoked oak",
+      "palate": "Intense peat, black cherry, and salted dark caramel",
+      "finish": "Very long, powerful, with a maritime smokiness"
+    },
+    "abv": 58.5,
+    "volume": "700ml",
+    "price": { "GBP": 65, "USD": 82, "EUR": 72 },
+    "image": "/products/stormbreak-cask-strength.jpg",
+    "occasions": ["casual-drink", "gifting"],
+    "flavorProfile": ["smoky", "bold", "spicy"]
+  },
+  {
+    "id": "harbour-lights-irish",
+    "name": "Harbour Lights Irish Whiskey",
+    "brand": "Harbour Lights",
+    "category": "irish-whiskey",
+    "subcategory": "blended",
+    "description": "A smooth triple-distilled Irish whiskey finished in port casks. Berry sweetness meets creamy malt — a coastal Irish classic.",
+    "tastingNotes": {
+      "nose": "Red berries, cream, and toasted oak",
+      "palate": "Silky malt, raspberry jam, and vanilla",
+      "finish": "Smooth, fruity, and gently warming"
+    },
+    "abv": 40,
+    "volume": "700ml",
+    "price": { "GBP": 30, "USD": 38, "EUR": 34 },
+    "image": "/products/harbour-lights-irish.jpg",
+    "occasions": ["casual-drink", "cocktails", "gifting"],
+    "flavorProfile": ["smooth", "sweet", "fruity"]
+  }
+]
