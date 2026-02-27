@@ -277,6 +277,7 @@ const handler = createMcpHandler(
                     type: z.enum(["card", "wallet", "mandate"]),
                     credential: z
                       .object({ type: z.string(), token: z.string() })
+                      .passthrough()
                       .optional(),
                   })
                 )
