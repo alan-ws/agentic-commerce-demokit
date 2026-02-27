@@ -40,8 +40,16 @@ export function generateProfile(baseUrl: string) {
     }
   }
 
-  // Payment handlers (empty for DemoKit mock)
+  // Payment handlers
   const payment_handlers: Record<string, unknown[]> = {};
+  for (const h of ucpConfig.payment_handlers) {
+    payment_handlers[h] = [{
+      version,
+      ...(h === "stripe" && process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+        ? { config: { publishable_key: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY } }
+        : {}),
+    }];
+  }
 
   return {
     ucp: {

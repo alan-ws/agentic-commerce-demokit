@@ -143,7 +143,7 @@ export interface PaymentInstrument {
   type: "card" | "wallet" | "mandate";
   selected?: boolean;
   display?: { brand?: string; last_digits?: string };
-  credential?: { type: string; token: string };
+  credential?: { type: string; token: string; customer_id?: string };
 }
 
 export interface Payment {

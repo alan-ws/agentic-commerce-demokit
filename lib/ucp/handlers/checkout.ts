@@ -41,10 +41,21 @@ function buildUCPMetadata(capabilities: string[]): UCPResponseMetadata {
   for (const cap of capabilities) {
     capMap[cap] = [{ version: ucpConfig.ucp_version }];
   }
+
+  const handlers: Record<string, { version: string; config?: Record<string, unknown> }[]> = {};
+  for (const h of ucpConfig.payment_handlers) {
+    handlers[h] = [{
+      version: ucpConfig.ucp_version,
+      ...(h === "stripe" && process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+        ? { config: { publishable_key: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY } }
+        : {}),
+    }];
+  }
+
   return {
     version: ucpConfig.ucp_version,
     capabilities: capMap,
-    payment_handlers: {},
+    payment_handlers: handlers,
   };
 }
 
@@ -297,20 +308,93 @@ export async function completeCheckout(
   session.status = "complete_in_progress";
   store.set(id, session);
 
-  // Mock payment processing
-  session.status = "completed";
-  session.order = {
-    id: `order_${randomUUID().slice(0, 8)}`,
-    status: "confirmed",
-  };
-  session.ucp = buildUCPMetadata(options.capabilities);
-  session.messages = [
-    {
-      type: "info",
-      content: "Order placed successfully. Thank you for your purchase!",
-    },
-  ];
+  // Find the payment instrument (if any)
+  const instrument = request.payment?.instruments?.[0];
+  const handlerId = instrument?.handler_id;
 
+  try {
+    if (handlerId === "stripe" && instrument?.credential?.token) {
+      const { stripe } = await import("@/lib/stripe");
+      const credType = instrument.credential.type;
+      const token = instrument.credential.token;
+      let confirmedPiId: string;
+
+      if (credType === "payment_method" && instrument.credential.customer_id) {
+        // Off-session agentic payment — stored card (pm_xxx + cus_xxx)
+        const total = session.totals.find((t) => t.type === "total");
+        const pi = await stripe.paymentIntents.create({
+          amount: total?.amount ?? 0,
+          currency: session.currency.toLowerCase(),
+          customer: instrument.credential.customer_id,
+          payment_method: token,
+          off_session: true,
+          confirm: true,
+          metadata: { checkout_id: session.id, market: session.market },
+        });
+
+        if (pi.status !== "succeeded") {
+          throw new Error(
+            pi.status === "requires_action"
+              ? "Bank requires additional authentication. Please complete payment in browser."
+              : `PaymentIntent status: ${pi.status}`
+          );
+        }
+        confirmedPiId = pi.id;
+      } else {
+        // Browser flow — PaymentIntent already created via /api/stripe/create-payment-intent
+        const pi = await stripe.paymentIntents.retrieve(token);
+
+        if (pi.status === "succeeded") {
+          // Already confirmed via Elements confirmPayment
+        } else if (pi.status === "requires_confirmation") {
+          await stripe.paymentIntents.confirm(token);
+        } else if (pi.status !== "requires_capture") {
+          throw new Error(`PaymentIntent status is ${pi.status} — cannot complete`);
+        }
+        confirmedPiId = pi.id;
+      }
+
+      session.status = "completed";
+      session.order = {
+        id: `order_${randomUUID().slice(0, 8)}`,
+        status: "confirmed",
+      };
+      session.messages = [
+        {
+          type: "info",
+          content: `Payment confirmed via Stripe (${confirmedPiId.slice(0, 12)}...). Thank you!`,
+        },
+      ];
+    } else {
+      // Mock / no payment instrument — demo flow
+      session.status = "completed";
+      session.order = {
+        id: `order_${randomUUID().slice(0, 8)}`,
+        status: "confirmed",
+      };
+      session.messages = [
+        {
+          type: "info",
+          content: "Order placed successfully. Thank you for your purchase!",
+        },
+      ];
+    }
+  } catch (err) {
+    // Payment failed — revert to ready_for_complete
+    session.status = "ready_for_complete";
+    session.messages = [
+      {
+        type: "error",
+        code: "payment_failed",
+        content: err instanceof Error ? err.message : "Payment processing failed",
+        severity: "recoverable",
+      },
+    ];
+    store.set(id, session);
+    return session;
+  }
+
+  session.ucp = buildUCPMetadata(options.capabilities);
   store.set(id, session);
   return session;
 }

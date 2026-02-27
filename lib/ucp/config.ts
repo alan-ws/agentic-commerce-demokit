@@ -14,7 +14,7 @@ export const ucpConfig = {
     extensions: ["dev.ucp.shopping.buyer_consent"],
   },
   transports: ["rest", "mcp"] as const,
-  payment_handlers: [] as string[],
+  payment_handlers: ["stripe", "mock"] as string[],
   domain: process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000",
   policy_urls: {
     privacy: brand.policyUrls.privacy,
